@@ -1,0 +1,6 @@
+<ng-container *ngIf="data">
+  <app-page-list-sort [params]="params" (changeCallback)="changeSorting($event)"></app-page-list-sort>
+  <app-page-list-paginator [pagination]="data.pagination" (changeCallback)="changePagination($event)"></app-page-list-paginator>
+
+  <app-page-list-item *ngFor="let item of data.list" [item]="item"></app-page-list-item>
+</ng-container>

@@ -1,0 +1,12 @@
+<div>
+  <label>Per page</label>
+  <select (change)="changePerPage($event)">
+    <option *ngFor="let item of options" [value]="item.value" [selected]="item.value == pagination.limit">{{ item.title }}</option>
+  </select>
+</div>
+
+<div>
+  <button [disabled]="pagination.page === 1" (click)="changePage(-1)">Prev</button>
+{{ pagination.page }}
+<button [disabled]="pagination.pages === pagination.page" (click)="changePage(1)">Next</button>
+</div>
